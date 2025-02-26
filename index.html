@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Supriya - Java Developer Portfolio showcasing projects, skills, and expertise in Java, SQL, and Web Development.">
+    <meta name="keywords" content="Java Developer, Web Development, SQL, Portfolio, Supriya">
+    <meta name="author" content="Supriya">
+
+    <title>Supriya | Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+        
+        /* ========== Global Styles ========== */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: linear-gradient(to right, #f8f9fa, #e9ecef);
+            color: #222;
+        }
+
+        .heading-container {
+            text-align: center; /* Center the inline-block h2 */
+        }
+
+        h2{
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #222;
+            text-align: center;
+            border-bottom: 3px solid #ff7e5f; /* Underline effect */
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        /* ========== Header/Navbar ========== */
+        header {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            box-sizing: border-box; /* Ensure box sizing includes padding */
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 0;
+            justify-content: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1em;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: color 0.3s, background-color 0.3s;
+        }
+
+        nav a:hover {
+            color: #007BFF; /* Soft Blue */
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Active Link Highlight */
+        nav a.active {
+            background: #007BFF;
+            color: white;
+            border-radius: 5px;
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* ========== DARK MODE ========== */
+        .mode-btn {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 1.5em;
+            color: white;
+            transition: color 0.3s ease;
+        }
+
+        .mode-btn:hover {
+            color: #ffdd57;
+        }
+        
+        /* Smooth Transition for Theme Switching */
+        * {
+            transition: color 0.1s ease, transform 0.1s ease;
+        }
+
+        /* Dark Mode Background for Home Section*/
+        .dark-mode #home{
+            background: #111b40 !important;
+            color: #ffffff !important;
+        }
+
+        /* Profile Image */
+        .dark-mode .profile-img:hover{
+            box-shadow: 5px 5px 15px rgba(0, 255, 255, 0.15);
+        }
+
+        /* Uniform dark mode background for all sections */
+        .dark-mode #about, .dark-mode #projects, .dark-mode #contact{
+            background: #1c2a4a !important;
+            color: #ffffff !important;
+        }
+
+        /* Navbar in Dark Mode */
+        .dark-mode header {
+            background: rgba(12, 16, 34, 0.95) !important;
+            box-shadow: rgba(0, 238, 255, 0.1);
+        }
+
+        .dark-mode nav a:hover {
+            color: #00eaff !important; /*neon blue*/
+            text-shadow: rgba(255, 71, 255, 0.2);
+        }
+
+        /* Project Cards in Dark Mode */
+        .dark-mode .project {
+            background: rgb(2, 136, 193) !important;
+            color: #e6edf3 !important;
+            box-shadow: 0px 4px 10px rgba(0, 238, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+        }
+
+        .dark-mode .projects{
+            background: #1c2a4a !important;
+        }
+
+        /* Project Title */
+        .dark-mode .project h3 {
+            color: whitesmoke !important;
+        }
+
+        /* Project Description */
+        .dark-mode .project p {
+            color: whitesmoke !important;
+        }
+
+        /* Buttons in Project Section */
+        .dark-mode .project a {
+            display: inline-block;
+            padding: 10px 15px;
+            margin-top: 10px;
+            background: #ff47ff;
+            color: white !important;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        /* Button Hover */
+        .dark-mode .project a:hover {
+            background: #be32be !important;
+            transform: scale(1.05);
+        }
+
+        /* Contact Form */
+        .dark-mode #contact input,
+        .dark-mode #contact textarea {
+            background: #33373d !important;
+            color: #e6edf3 !important;
+        }
+
+        .dark-mode #contact input:focus, 
+        .dark-mode #contact textarea:focus {
+            border: 1px solid #00eaff !important;
+            box-shadow: 0px 0px 5px rgba(0, 238, 255, 0.6);
+        }
+
+        .dark-mode #contact button {
+            background: #ffcc00 !important;
+            color: black !important;
+        }
+
+        .dark-mode #contact button:hover {
+            background: #ffaa00 !important;
+        }
+
+        /* Scroll to Top Button */
+        .dark-mode #scrollToTopBtn {
+            background: #20c5ff !important;
+            color: #0a0f24 !important;
+            border-radius: 50px;
+            box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+        }
+
+        .dark-mode #scrollToTopBtn:hover {
+            background: #ffaa00 !important;
+            transform: scale(1.1);
+        }
+
+        /* Mode Button */
+        .mode-btn {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 1.5em;
+            color: white;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .mode-btn:hover {
+            color: #ffcc00;
+            transform: rotate(20deg);
+        }
+
+        /* headings and text inside sections */
+        .dark-mode h1, 
+        .dark-mode h2, 
+        .dark-mode h3, 
+        .dark-mode p, 
+        .dark-mode li {
+            color: white !important;
+        }
+
+        /* ========== Home Section ========== */
+        #home {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 50px;
+            background-color: #f4fbff;
+        }
+
+        /* Home Container */
+        .home-container {
+            display: flex;
+            align-items: center;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        /* Left Side: Content */
+        .home-content {
+            flex: 1;
+            text-align: left;
+            padding: 20px;
+        }
+
+        .home-content h1 {
+            font-size: 2.5rem;
+            color: #222222;
+        }
+
+        .home-content h2 {
+            font-size: 1.8rem;
+            color: #444444;
+        }
+
+        .home-content p {
+            font-size: 1.2rem;
+            color: #555555;
+            margin-top: 10px;
+            line-height: 1.6;
+        }
+
+        .home-content h2 span {
+            color: #6a5acd; /* Purple Color for "Java Developer" */
+        }
+
+
+        /* ========== Buttons ========== */
+        .btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #ffffff;
+            background-color: #007BFF;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s ease-in-out;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Right Side: Profile Image */
+        .home-image {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .home-image img {
+            width: 300px;
+            height: auto;
+            border-radius: 50%;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .profile-img {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05); /* Slightly enlarges the image */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); /* Adds a subtle shadow */
+        }
+
+        /* ========== About Section ========== */
+        #about {
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        #about p {
+            text-align: center;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        #moreContent {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+        }
+
+        #moreContent.show {
+            max-height: 500px; /* Adjust based on content length */
+            opacity: 1;
+        }
+
+
+        .show-more-btn {
+            background-color: #007BFF;
+            color: #ffffff;
+            padding: 12px 18px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            font-weight: bold;
+            display: block;
+            margin: 20px auto;
+        }
+
+        .show-more-btn:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        /* ========== Projects Section ========== */
+        #projects {
+            padding: 80px 0;
+        }
+
+        .projects {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .project {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #f1f1f1 !important;
+            width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-title {
+            font-size: 2em !important; 
+            font-weight: bold !important; 
+            text-align: center !important; 
+            margin-bottom: 10px !important; 
+            color: navy !important; 
+            display: inline-block !important; 
+        }
+
+        .project p {
+            color: black;
+        }
+
+        .project h3{
+            text-align: center;
+            font-size:x-large;
+            font-weight: bold;
+            width: 100%;  /* Ensure it spans the container */
+        }
+
+        .project:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            will-change: transform;
+        }
+
+
+        .project img {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .project img:hover {
+            transform: scale(1.05);
+        }
+
+        .view-code-btn {          /* Github link button */
+            display: block;
+            text-align: center;
+            background-color: #007BFF;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+            margin-top: auto;
+        }
+
+        .view-code-btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* ========== Contact Section ========== */
+        #contact {
+            padding: 80px 20px;
+            color: #222;
+        }
+
+        #contact h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #222;
+        }
+
+        #contact p{
+            text-align: center;
+        }
+
+        #contact form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        #contact input,
+        #contact textarea {
+            padding: 15px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #fff;
+            color: #333;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        #contact input:focus,
+        #contact textarea:focus {
+            outline: none;
+            box-shadow: 0 0 10px rgba(0, 162, 255, 0.8);
+        }
+
+        #contact button {
+            padding: 15px 25px;
+            font-size: 1.2em;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        #contact button:hover {
+            transform: scale(1.1);
+            background-color: #0056b3;
+        }
+
+        /* ========== Scroll to Top Button ========== */
+        #scrollToTopBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            display: none; /* Initially hidden */
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+            transition: opacity 0.3s, transform 0.3s;
+        }
+
+        /* Hover effect */
+        #scrollToTopBtn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Add fade-in effect */
+        #scrollToTopBtn.show {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* ========== Footer ========== */
+        footer {
+            text-align: center;
+            padding: 8px;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+        }
+
+        /* ========== Responsive Design ========== */
+        @media (max-width: 768px) {
+            .home-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .home-image {
+                justify-content: center;
+            }
+
+            .home-content {
+                text-align: center;
+            }
+
+            header{
+                padding: 15px 30px;
+            }
+
+            nav ul {
+                justify-content: center;
+                gap: 15px;
+            }
+
+            nav a {
+                font-size: 1em;
+            }
+        }
+
+        @media (max-width: 600px) {
+            #contact form {
+                width: 100%;
+                padding: 0 10px;
+            }
+
+            #contact input,
+            #contact textarea {
+                font-size: 0.9em;
+                padding: 12px;
+            }
+
+            #contact button {
+                font-size: 1em;
+                padding: 12px 20px;
+            }
+        }
+
+</style>
+
+<script>
+
+    /* ========== Typing Effect for "Java Developer" ========== */    
+    const text = "Java Developer";
+    let i = 0;
+    function typeEffect() {
+        if (i < text.length) {
+            document.getElementById("typing-text").innerHTML += text.charAt(i);
+            i++;
+            setTimeout(typeEffect, 100);
+        }
+    }
+    window.onload = typeEffect;
+
+    
+    /* ========== Navbar Active Link Highlight ========== */
+    document.addEventListener("DOMContentLoaded", function () {
+        const sections = document.querySelectorAll("section");
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        function changeActiveSection() {
+            let scrollY = window.scrollY;
+
+            sections.forEach((section) => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.clientHeight;
+
+                if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                    navLinks.forEach((link) => link.classList.remove("active"));
+                    
+                    let activeLink = document.querySelector(`.nav-link[href="#${section.id}"]`);
+                    if (activeLink) {
+                        activeLink.classList.add("active");
+                    }
+                }
+            });
+        }
+
+        window.addEventListener("scroll", changeActiveSection);
+        changeActiveSection(); // Run initially to set active link on page load
+    });
+
+    /* ========== Show More Button ========== */
+    function toggleAbout() {
+        var moreContent = document.getElementById("moreContent");
+        var btn = document.getElementById("showMoreBtn");
+
+        if (moreContent.classList.contains("show")) {
+            moreContent.classList.remove("show");
+            btn.textContent = "Show More";
+            setTimeout(() => moreContent.style.display = "none", 500); // Hide after transition
+        } else {
+            moreContent.style.display = "block"; // Show before transition
+            setTimeout(() => moreContent.classList.add("show"), 10);
+            btn.textContent = "Show Less";
+        }
+    }
+
+    /* ==========  Display Button when Scrolling Down ========== */
+    window.onscroll = function () {
+        let button = document.getElementById("scrollToTopBtn");
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            button.classList.add("show");
+        } else {
+            button.classList.remove("show");
+        }
+    };
+
+    // Scroll to Top Function
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }
+
+    /* ==========  Smooth Scroll Effect for Internal Links ========== */
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute("href")).scrollIntoView({
+                behavior: "smooth"
+            });
+        });
+    });
+
+    /* ==========  Dark Mode ========== */
+    document.addEventListener("DOMContentLoaded", function () {
+        const modeToggle = document.getElementById("mode-toggle");
+        const body = document.body;
+        const icon = modeToggle.querySelector("i");
+
+        // Apply dark mode if saved in localStorage
+        if (localStorage.getItem("mode") === "dark") {
+            body.classList.add("dark-mode");
+            icon.classList.replace("fa-moon", "fa-sun");
+        }
+
+        modeToggle.addEventListener("click", function () {
+            body.classList.toggle("dark-mode");
+
+            if (body.classList.contains("dark-mode")) {
+                localStorage.setItem("mode", "dark");
+                icon.classList.replace("fa-moon", "fa-sun");
+            } else {
+                localStorage.setItem("mode", "light");
+                icon.classList.replace("fa-sun", "fa-moon");
+            }
+        });
+    });
+
+
+</script>
+
+</head>
+<body>
+    <header>
+        <div class="logo">Supriya | Portfolio</div>
+        <nav>
+            <ul>
+                <li><a href="#home" class="nav-link"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li><a href="#about" class="nav-link"><i class="fa-solid fa-user"></i> About</a></li>
+                <li><a href="#projects" class="nav-link"><i class="fa-solid fa-briefcase"></i> Projects</a></li>
+                <li><a href="#contact" class="nav-link"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+                <li>
+                    <button id="mode-toggle" class="mode-btn">
+                        <i class="fa-solid fa-moon"></i>
+                    </button>
+                </li>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <div class="home-container">
+            <!-- Left Side: Text Content -->
+            <div class="home-content">
+                <h1>Welcome to My Portfolio</h1>
+                <h2>I'm Supriya, a <span id="typing-text"></span></h2>
+                <p>
+                    Passionate about building robust backend systems, optimizing databases, and crafting seamless web applications. 
+                    Always ready to tackle new challenges with innovation and precision.
+                </p>
+                <a href="#about" class="btn">Know More</a>
+            </div>
+    
+            <!-- Right Side: Profile Image -->
+            <div class="home-image">
+                <img src="passport size photo sup.jpg" alt="My Profile Picture" class="profile-img">
+            </div>
+        </div>
+    </section>    
+
+    <section id="about">
+        <div class="heading-container">
+            <h2><i class="fa-solid fa-user"></i> About Me</h2>
+        </div>
+        
+        <p>
+            I am a dedicated Java Developer with a strong foundation in backend development, database management, and web technologies. My expertise lies in building scalable, efficient, and high-performance applications that enhance user experience and business functionality.
+        </p>
+
+        <br>
+    
+        <div id="moreContent">
+            <p style="text-decoration:underline; font-weight: bold;">Technical Skills:</p>
+            <ul style="text-align: left; padding-left: 30%;">
+                <li><strong>Languages:</strong> Java, SQL, HTML, CSS, JavaScript</li>
+                <li><strong>Frameworks & Technologies:</strong> Spring Boot</li>
+                <li><strong>Database Management:</strong> MySQL</li>
+                <li><strong>Web Development:</strong> Responsive UI, Frontend-Backend Integration</li>
+                <li><strong>Tools & Version Control:</strong> Git, GitHub, IntelliJ IDEA</li>
+                <li><strong>Problem-Solving:</strong> Data Structures & Algorithms, Code Optimization</li>
+            </ul>
+
+            <br>
+    
+            <p>
+                Beyond coding, I thrive on speed and precision, both in programming and on the racetrack. My passion for racing has honed my ability to make split-second decisions, adapt to challenges, and constantly push for improvement—qualities I bring into my development work.
+            </p>
+        </div>
+    
+        <button id="showMoreBtn" class="btn" onclick="toggleAbout()">Show More</button>
+    </section>
+    
+
+    <section id="projects">
+        <div class="heading-container">
+            <h2><i class="fa-solid fa-briefcase"></i> My Projects</h2>
+        </div>
+        </section>
+        <div class="projects">
+            <div class="project">
+
+                <h3 class="project-title"><i class="fa-solid fa-diagram-project"></i> Project 1:</h3>
+                <h3>AMAZON E-COMMERCE CLONE WEBSITE</h3>
+
+                <img src="Amazon_Clone.png" alt="Amazon Clone UI" loading="lazy" style="width:100%; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,0.2);">
+                <br>
+                <img src="Amazon_Clone2.png" alt="Amazon Clone UI" loading="lazy" style="width:100%; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,0.2);">
+                <br>
+                <img src="Amazon_UI_UX4.png" alt="Amazon Clone UI" loading="lazy" style="width:100%; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,0.2);">
+
+                <p>Built a fully functional Amazon clone with HTML, CSS, and JavaScript.</p>
+                
+                <br>
+
+                <a href="https://github.com/Supriya11-22/Amazon_Clone_Website" target="_blank" class="view-code-btn">View Code</a>
+
+            </div>
+            <div class="project">
+
+                <h3 class="project-title"><i class="fa-solid fa-diagram-project"></i> Project 2:</h3>
+                <h3>LIBRARY MANAGEMENT WEBSITE</h3>
+
+                <img src="Library_Management.png" alt="Library Management UI" loading="lazy" style="width:100%; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,0.2);">
+                <br>
+                <img src="Library_Management2.png" alt="Library Management UI" loading="lazy" style="width:100%; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,0.2);">
+                <br>
+                <img src="Library_website_UI_UX6.png" alt="Library Management UI" loading="lazy" style="width:100%; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,0.2);">
+
+                <p>Developed a Library Management System using Java and modern web technologies to streamline book tracking, borrowing, and returns.</p>
+
+                <br>
+
+                <a href="https://github.com/Supriya11-22/Library_FrontEnd_HTML" target="_blank" class="view-code-btn">View Code</a>
+
+            </div>
+
+            <div class="project">
+
+                <h3 class="project-title"><i class="fa-solid fa-diagram-project"></i> Project 3:</h3>
+                <h3>CALCULATOR IN JAVA SWING</h3>
+
+                <img src="Calculator_JavaSwing.png" alt="Calculator using Java Swing UI" loading="lazy" style="width:100%; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,0.2);">
+
+                <p>This project is a simple calculator application built using Java Swing. It provides a user-friendly graphical interface.</p>
+
+                <br>
+
+                <a href="https://github.com/Supriya11-22/Calculator-using-JavaSwing" target="_blank" class="view-code-btn">View Code</a>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="heading-container">
+            <h2><i class="fa-solid fa-envelope"></i> Let's Get in Touch!</h2>
+        </div>
+
+        <p>Have a project in mind or just want to say hi? Feel free to reach out.</p>
+
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit"><i class="fa-solid fa-paper-plane"></i> Send Message</button>
+        </form>
+
+        <p>Or find me on <a href="https://linkedin.com/in/supriya-chaudhary-46b092303" target="_blank"><i class="fab fa-linkedin linkedin-icon"> LinkedIn</i></a> or <a href="https://github.com/Supriya11-22" target="_blank"><i class="fab fa-github github-icon"> GitHub</i></a></p>
+       
+    </section>  
+    
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" onclick="scrollToTop()">⬆</button>
+
+    <footer>
+        <p>&copy; 2025 Supriya | Portfolio. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
