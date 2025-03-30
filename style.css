@@ -1,0 +1,705 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* ========== Global Styles ========== */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: linear-gradient(to right, #f8f9fa, #e9ecef);
+    color: #222;
+}
+
+.heading-container {
+    text-align: center;
+    /* Center the inline-block h2 */
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #222;
+    text-align: center;
+    border-bottom: 3px solid #ff7e5f;
+    /* Underline effect */
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* ========== Header/Navbar ========== */
+header {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 0;
+    justify-content: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+nav a:hover {
+    color: #007BFF;
+    /* Soft Blue */
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Active Link Highlight */
+nav a.active {
+    background: #007BFF;
+    color: white;
+    border-radius: 5px;
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ========== Hamburger Button (Hidden on Desktop) ========== */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    position: absolute;
+    right: 20px;
+    /* Move to the right */
+    top: 50%;
+    transform: translateY(-50%);
+    /* Center vertically */
+    z-index: 1100;
+}
+
+/* Hamburger Bars */
+.hamburger div {
+    width: 30px;
+    height: 3px;
+    background: white;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* ========== DARK MODE ========== */
+.mode-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5em;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.mode-btn:hover {
+    color: #ffdd57;
+}
+
+/* Smooth Transition for Theme Switching */
+* {
+    transition: color 0.1s ease, transform 0.1s ease;
+}
+
+/* Dark Mode Background for Home Section*/
+.dark-mode #home {
+    background: #111b40 !important;
+    color: #ffffff !important;
+}
+
+/* Profile Image */
+.dark-mode .profile-img:hover {
+    box-shadow: 5px 5px 15px rgba(0, 255, 255, 0.15);
+}
+
+/* Uniform dark mode background for all sections */
+.dark-mode #about,
+.dark-mode #projects,
+.dark-mode #contact {
+    background: #1c2a4a !important;
+    color: #ffffff !important;
+}
+
+/* Navbar in Dark Mode */
+.dark-mode header {
+    background: rgba(12, 16, 34, 0.95) !important;
+    box-shadow: rgba(0, 238, 255, 0.1);
+}
+
+.dark-mode nav a:hover {
+    color: #00eaff !important;
+    /*neon blue*/
+    text-shadow: rgba(255, 71, 255, 0.2);
+}
+
+/* Project Cards in Dark Mode */
+.dark-mode .project {
+    background: rgb(2, 136, 193) !important;
+    color: #e6edf3 !important;
+    box-shadow: 0px 4px 10px rgba(0, 238, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.dark-mode .projects {
+    background: #1c2a4a !important;
+}
+
+/* Project Title */
+.dark-mode .project h3 {
+    color: whitesmoke !important;
+}
+
+/* Project Description */
+.dark-mode .project p {
+    color: whitesmoke !important;
+}
+
+/* Buttons in Project Section */
+.dark-mode .project a {
+    display: inline-block;
+    padding: 10px 15px;
+    margin-top: 10px;
+    background: #ff47ff;
+    color: white !important;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+/* Button Hover */
+.dark-mode .project a:hover {
+    background: #be32be !important;
+    transform: scale(1.05);
+}
+
+/* Contact Form */
+.dark-mode #contact input,
+.dark-mode #contact textarea {
+    background: #33373d !important;
+    color: #e6edf3 !important;
+}
+
+.dark-mode #contact input:focus,
+.dark-mode #contact textarea:focus {
+    border: 1px solid #00eaff !important;
+    box-shadow: 0px 0px 5px rgba(0, 238, 255, 0.6);
+}
+
+.dark-mode #contact button {
+    background: #ffcc00 !important;
+    color: black !important;
+}
+
+.dark-mode #contact button:hover {
+    background: #ffaa00 !important;
+}
+
+/* Linkedin Link Style */
+.dark-mode .linkedin-icon {
+    color: #00a0dc !important;
+    /* Brighter LinkedIn Blue */
+}
+
+/* Github Link Style */
+.dark-mode .github-icon {
+    color: #b39ddb !important;
+    /* Gentle Purple */
+}
+
+/* Hover Effects */
+.dark-mode .linkedin-icon:hover {
+    color: #80d8ff !important;
+    /* Soft Cyan */
+}
+
+.dark-mode .github-icon:hover {
+    color: #d1c4e9 !important;
+    /* Soft Lavender */
+}
+
+/* Scroll to Top Button */
+.dark-mode #scrollToTopBtn {
+    background: #20c5ff !important;
+    color: #0a0f24 !important;
+    border-radius: 50px;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+.dark-mode #scrollToTopBtn:hover {
+    background: #ffaa00 !important;
+    transform: scale(1.1);
+}
+
+/* Mode Button */
+.mode-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5em;
+    color: white;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.mode-btn:hover {
+    color: #ffcc00;
+    transform: rotate(20deg);
+}
+
+/* headings and text inside sections */
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode p,
+.dark-mode li {
+    color: white !important;
+}
+
+/* ========== Home Section ========== */
+#home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 50px;
+    background-color: #f4fbff;
+    padding-top: 80px;
+    padding-bottom: 50px;
+}
+
+/* Home Container */
+.home-container {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+}
+
+/* Left Side: Content */
+.home-content {
+    flex: 1;
+    text-align: left;
+    padding: 20px;
+}
+
+.home-content h1 {
+    font-size: 2.5rem;
+    color: #222222;
+}
+
+.home-content h2 {
+    font-size: 1.8rem;
+    color: #444444;
+}
+
+.home-content p {
+    font-size: 1.2rem;
+    color: #555555;
+    margin-top: 10px;
+    line-height: 1.6;
+}
+
+.home-content h2 span {
+    color: #6a5acd;
+    /* Purple Color for "Java Developer" */
+}
+
+
+/* ========== Buttons ========== */
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #ffffff;
+    background-color: #007BFF;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Right Side: Profile Image */
+.home-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px;
+}
+
+.home-image img {
+    width: 300px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.profile-img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.05);
+    /* Slightly enlarges the image */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    /* Adds a subtle shadow */
+}
+
+/* ========== About Section ========== */
+#about {
+    padding: 100px 20px;
+    text-align: center;
+}
+
+#about p {
+    text-align: center;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+#moreContent {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+#moreContent.show {
+    max-height: 500px;
+    /* Adjust based on content length */
+    opacity: 1;
+}
+
+
+.show-more-btn {
+    background-color: #007BFF;
+    color: #ffffff;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    font-weight: bold;
+    display: block;
+    margin: 20px auto;
+}
+
+.show-more-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* ========== Projects Section ========== */
+#projects {
+    padding: 80px 0;
+}
+
+.projects {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.project {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #f1f1f1 !important;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-title {
+    font-size: 2em !important;
+    font-weight: bold !important;
+    text-align: center !important;
+    margin-bottom: 10px !important;
+    color: navy !important;
+    display: inline-block !important;
+}
+
+.project p {
+    color: black;
+}
+
+.project h3 {
+    text-align: center;
+    font-size: x-large;
+    font-weight: bold;
+    width: 100%;
+    /* Ensure it spans the container */
+}
+
+.project:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    will-change: transform;
+}
+
+
+.project img {
+    transition: transform 0.3s ease-in-out;
+}
+
+.project img:hover {
+    transform: scale(1.05);
+}
+
+.view-code-btn {
+    /* Github link button */
+    display: block;
+    text-align: center;
+    background-color: #007BFF;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+    margin-top: auto;
+}
+
+.view-code-btn:hover {
+    background-color: #0056b3;
+}
+
+/* ========== Contact Section ========== */
+#contact {
+    padding: 80px 20px;
+    color: #222;
+}
+
+#contact h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+#contact p {
+    text-align: center;
+}
+
+#contact form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#contact input,
+#contact textarea {
+    padding: 15px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    color: #333;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+#contact input:focus,
+#contact textarea:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 162, 255, 0.8);
+}
+
+#contact button {
+    padding: 15px 25px;
+    font-size: 1.2em;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#contact button:hover {
+    transform: scale(1.1);
+    background-color: #0056b3;
+}
+
+/* Default LinkedIn link style */
+.linkedin-icon {
+    color: #0077b5;
+    /* LinkedIn Blue */
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Default Github link style */
+.github-icon {
+    color: #333;
+    /* Dark Gray */
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.linkedin-icon:hover {
+    color: #005582;
+    /* Deeper LinkedIn Blue */
+}
+
+.github-icon:hover {
+    color: #555;
+    /* Softer Dark Gray */
+}
+
+/* ========== Scroll to Top Button ========== */
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+    /* Initially hidden */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+/* Hover effect */
+#scrollToTopBtn:hover {
+    background-color: #0056b3;
+}
+
+/* Add fade-in effect */
+#scrollToTopBtn.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ========== Footer ========== */
+footer {
+    text-align: center;
+    padding: 8px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+}
+
+/* ========== Responsive Design ========== */
+@media (max-width: 768px) {
+    #home {
+        padding-top: 250px;
+        padding-bottom: 250px;
+    }
+
+    .home-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .home-image {
+        justify-content: center;
+    }
+
+    .home-content {
+        text-align: center;
+    }
+
+    header {
+        padding: 15px 30px;
+    }
+
+    /* Hide menu initially */
+    nav ul {
+        gap: 15px;
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        padding: 15px 0;
+        text-align: center;
+        transition: 0.3s ease-in-out;
+    }
+
+    nav a {
+        font-size: 1em;
+        display: block;
+        padding: 12px;
+    }
+
+    /* Show Hamburger Button on Mobile */
+    .hamburger {
+        display: flex;
+    }
+
+    /* Show menu when active */
+    nav ul.active {
+        display: flex;
+    }
+
+    /* Animate Hamburger into "X" */
+    .hamburger.active div:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active div:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active div:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+}
+
+@media (max-width: 600px) {
+    #contact form {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    #contact input,
+    #contact textarea {
+        font-size: 0.9em;
+        padding: 12px;
+    }
+
+    #contact button {
+        font-size: 1em;
+        padding: 12px 20px;
+    }
+}

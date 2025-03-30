@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Supriya - Java Developer Portfolio showcasing projects, skills, and expertise in Java, SQL, and Web Development.">
+    <meta name="keywords" content="Java Developer, Web Development, SQL, Portfolio, Supriya">
+    <meta name="author" content="Supriya">
+
+    <title>Supriya | Portfolio</title>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <header>
+        <div class="logo">Supriya | Portfolio</div>
+
+        <!-- Hamburger Button -->
+        <div class="hamburger" id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <nav>
+            <ul id="menu">
+                <li><a href="#home" class="nav-link"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li><a href="#about" class="nav-link"><i class="fa-solid fa-user"></i> About</a></li>
+                <li><a href="#projects" class="nav-link"><i class="fa-solid fa-briefcase"></i> Projects</a></li>
+                <li><a href="#contact" class="nav-link"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+                <li>
+                    <button id="mode-toggle" class="mode-btn">
+                        <i class="fa-solid fa-moon"></i>
+                    </button>
+                </li>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <div class="home-container">
+            <!-- Left Side: Text Content -->
+            <div class="home-content">
+                <h1>Welcome to My Portfolio</h1>
+                <h2>I'm Supriya, a <span id="typing-text"></span></h2>
+                <p>
+                    Passionate about building robust backend systems, optimizing databases, and crafting seamless web applications. 
+                    Always ready to tackle new challenges with innovation and precision.
+                </p>
+                <a href="#about" class="btn">Know More</a>
+            </div>
+    
+            <!-- Right Side: Profile Image -->
+            <div class="home-image">
+                <img src="passport size photo sup.jpg" alt="My Profile Picture" class="profile-img">
+            </div>
+        </div>
+    </section>    
+
+    <section id="about">
+        <div class="heading-container">
+            <h2><i class="fa-solid fa-user"></i> About Me</h2>
+        </div>
+        
+        <p>
+            I am a dedicated Java Developer with a strong foundation in backend development, database management, and web technologies. My expertise lies in building scalable, efficient, and high-performance applications that enhance user experience and business functionality.
+        </p>
+
+        <br>
+    
+        <div id="moreContent">
+            <p style="text-decoration:underline; font-weight: bold;">Technical Skills:</p>
+            <ul style="text-align: left; padding-left: 30%;">
+                <li><strong>Languages:</strong> Java, SQL, HTML, CSS, JavaScript</li>
+                <li><strong>Frameworks & Technologies:</strong> Spring Boot</li>
+                <li><strong>Database Management:</strong> MySQL</li>
+                <li><strong>Web Development:</strong> Responsive UI, Frontend-Backend Integration</li>
+                <li><strong>Tools & Version Control:</strong> Git, GitHub, IntelliJ IDEA</li>
+                <li><strong>Problem-Solving:</strong> Data Structures & Algorithms, Code Optimization</li>
+            </ul>
+
+            <br>
+    
+            <p>
+                Beyond coding, I thrive on speed and precision, both in programming and on the racetrack. My passion for racing has honed my ability to make split-second decisions, adapt to challenges, and constantly push for improvement—qualities I bring into my development work.
+            </p>
+        </div>
+    
+        <button id="showMoreBtn" class="btn" onclick="toggleAbout()">Show More</button>
+    </section>
+    
+
+    <section id="projects">
+        <div class="heading-container">
+            <h2><i class="fa-solid fa-briefcase"></i> My Projects</h2>
+        </div>
+        </section>
+        <div class="projects">
+            <div class="project">
+
+                <h3 class="project-title"><i class="fa-solid fa-diagram-project"></i> Project 1:</h3>
+                <h3>AMAZON E-COMMERCE CLONE WEBSITE</h3>
+
+                <img src="Amazon_UI_UX1.png" alt="Amazon Clone UI" loading="lazy" style="width:100%; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,0.2);">
+                <br>
+                <img src="Amazon_UI_UX2.png" alt="Amazon Clone UI" loading="lazy" style="width:100%; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,0.2);">
+                <br>
+                <img src="Amazon_UI_UX3.png" alt="Amazon Clone UI" loading="lazy" style="width:100%; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,0.2);">
+
+                <p>Built a fully functional Amazon clone with HTML, CSS, and JavaScript.</p>
+                
+                <br>
+
+                <a href="https://github.com/Supriya11-22/Amazon_Clone_Website" target="_blank" class="view-code-btn">View Code</a>
+
+            </div>
+            <div class="project">
+
+                <h3 class="project-title"><i class="fa-solid fa-diagram-project"></i> Project 2:</h3>
+                <h3>LIBRARY MANAGEMENT WEBSITE</h3>
+
+                <img src="Library_Management.png" alt="Library Management UI" loading="lazy" style="width:100%; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,0.2);">
+                <br>
+                <img src="Library_Management2.png" alt="Library Management UI" loading="lazy" style="width:100%; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,0.2);">
+                <br>
+                <img src="Library_website_UI_UX6.png" alt="Library Management UI" loading="lazy" style="width:100%; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,0.2);">
+
+                <p>Developed a Library Management System using Java and modern web technologies to streamline book tracking, borrowing, and returns.</p>
+
+                <br>
+
+                <a href="https://github.com/Supriya11-22/Library_FrontEnd_HTML" target="_blank" class="view-code-btn">View Code</a>
+
+            </div>
+
+            <div class="project">
+
+                <h3 class="project-title"><i class="fa-solid fa-diagram-project"></i> Project 3:</h3>
+                <h3>CALCULATOR IN JAVA SWING</h3>
+
+                <img src="Calculator_JavaSwing.png" alt="Calculator using Java Swing UI" loading="lazy" style="width:100%; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,0.2);">
+
+                <p>This project is a simple calculator application built using Java Swing. It provides a user-friendly graphical interface.</p>
+
+                <br>
+
+                <a href="https://github.com/Supriya11-22/Calculator-using-JavaSwing" target="_blank" class="view-code-btn">View Code</a>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="heading-container">
+            <h2><i class="fa-solid fa-envelope"></i> Let's Get in Touch!</h2>
+        </div>
+
+        <p>Have a project in mind or just want to say hi? Feel free to reach out.</p>
+
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit"><i class="fa-solid fa-paper-plane"></i> Send Message</button>
+        </form>
+
+        <p>Or find me on <a href="https://linkedin.com/in/supriya-chaudhary-46b092303" target="_blank"><i class="fab fa-linkedin linkedin-icon"> LinkedIn</i></a> or <a href="https://github.com/Supriya11-22" target="_blank"><i class="fab fa-github github-icon"> GitHub</i></a></p>
+       
+    </section>  
+    
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" onclick="scrollToTop()">⬆</button>
+
+    <footer>
+        <p>&copy; 2025 Supriya | Portfolio. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript Link -->
+    <script src="script.js" defer></script>
+</body>
+</html>
